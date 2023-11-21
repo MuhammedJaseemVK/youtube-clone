@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
+
+@layer components {
+  .btn {
+    @apply  inline-block cursor-pointer py-1 px-2 rounded-md font-bold hover:bg-slate-600;
+  }
+
+  .btn-menu {
+    @apply inline-block cursor-pointer text-3xl p-2 rounded-full hover:bg-slate-600;
+  }
+
+}
+
 @tailwind utilities;
