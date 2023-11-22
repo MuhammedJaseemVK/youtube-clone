@@ -1,18 +1,29 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { fetchFromAPI } from './utils/fetchFromAPI'
 import { SidebarContext } from './context/SidebarContext'
+import VideoCard from './VideoCard';
 
 function Feed() {
-
+  const [searchResult, setSearchResult] = useState(null);
   const [, , selectedCategory, setSelectedCategory] = useContext(SidebarContext)
   useEffect(() => {
-    // fetchFromAPI(`search/?part=snippet&order=relevance&q=mrbeast&safeSearch=moderate&type=video,channel,playlist`)
-    fetchFromAPI(`search/?q=${selectedCategory}}`)
+    const fetchData = async () => {
+      const response = await fetchFromAPI(`search/?q=${selectedCategory}}&type=video`)
+      setSearchResult(response.items)
+    }
+    fetchData();
   }, [selectedCategory])
   return (
-    <div className='w-full bg-pink-500 h-full p-2'>
-      <div className='font-bold text-4xl text-red-500'>
+    <div className='w-full bg-slate-800 h-full p-2'>
+      <div className='font-bold text-4xl text-[#FF0000]'>
         {selectedCategory} <span className='text-white'>Videos</span>
+      </div>
+      <div className='grid grid-cols-4 gap-2' >
+        {
+          searchResult && searchResult.map((video, index, searchResult) => {
+            return <VideoCard key={index} video={video}/>
+          })
+        }
       </div>
     </div>
   )

@@ -1,9 +1,9 @@
 import React from 'react'
 
-function videoDetail() {
+function VideoDetail() {
   return (
-    <div>videoDetail</div>
+    <div>VideoDetail</div>
   )
 }
 
-export default videoDetail
+export default VideoDetail

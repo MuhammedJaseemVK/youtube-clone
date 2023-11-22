@@ -17,7 +17,6 @@ function Sidebar() {
                             <p className='font-bold'>YouTube</p>
                         </Link>
                     </div>
-                    {selectedCategory}
                     <p className='btn' onClick={()=>setSelectedCategory('Home')}>Home</p>
                     <p className='btn' onClick={()=>setSelectedCategory('Trending')}>Trending</p>
                     <p className='btn' onClick={()=>setSelectedCategory('Music')}>Music</p>

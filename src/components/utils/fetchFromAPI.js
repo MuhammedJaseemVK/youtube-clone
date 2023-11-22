@@ -6,7 +6,7 @@ export const fetchFromAPI = async (url) => {
     const options = {
         params: {
             part: 'snippet',
-            maxResults: '5',
+            maxResults: '20',
             order: 'relevance',
             safeSearch: 'moderate',
           },
