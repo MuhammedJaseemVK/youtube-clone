@@ -5,8 +5,11 @@ export const fetchFromAPI = async (url) => {
     const BASE_URL = 'https://youtube-v311.p.rapidapi.com'
     const options = {
         params: {
-            maxResults: 50
-        },
+            part: 'snippet',
+            maxResults: '5',
+            order: 'relevance',
+            safeSearch: 'moderate',
+          },
         headers: {
             'X-RapidAPI-Key': apiKey,
             'X-RapidAPI-Host': 'youtube-v311.p.rapidapi.com'
@@ -14,7 +17,8 @@ export const fetchFromAPI = async (url) => {
     };
 
     try {
-        const {data} = await axios.get(`${BASE_URL}/${url}`,options);
+        const { data } = await axios.get(`${BASE_URL}/${url}`, options);
+        console.log(data)
         return data
     } catch (error) {
         console.error(error);

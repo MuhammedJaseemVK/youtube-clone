@@ -5,7 +5,7 @@ import { SidebarContext } from './context/SidebarContext';
 import { Link } from "react-router-dom";
 
 function Sidebar() {
-    const [showSidebar, setShowsidebar] = useContext(SidebarContext);
+    const [showSidebar, setShowsidebar,selectedCategory,setSelectedCategory] = useContext(SidebarContext);
     return (
         <div className='absolute top-0 left-0 z-10 w-full h-full flex justify-between'>
             <div className='h-full w-1/6 bg-slate-700 shadow-xl'>
@@ -17,9 +17,10 @@ function Sidebar() {
                             <p className='font-bold'>YouTube</p>
                         </Link>
                     </div>
-                    <p className='btn'>Home</p>
-                    <p className='btn'>Trending</p>
-                    <p className='btn'>Music</p>
+                    {selectedCategory}
+                    <p className='btn' onClick={()=>setSelectedCategory('Home')}>Home</p>
+                    <p className='btn' onClick={()=>setSelectedCategory('Trending')}>Trending</p>
+                    <p className='btn' onClick={()=>setSelectedCategory('Music')}>Music</p>
                 </div>
             </div>
             <div className='bg-black/80 w-5/6 h-full' onClick={() => setShowsidebar(!showSidebar)}>

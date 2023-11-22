@@ -4,9 +4,10 @@ export const SidebarContext = React.createContext();
 
 function SidebarProvider({ children }) {
     const [showSidebar, setShowsidebar] = useState(false);
+    const [selectedCategory,setSelectedCategory]=useState('MrBeast');
 
     return (
-        <SidebarContext.Provider value={[showSidebar, setShowsidebar]} >
+        <SidebarContext.Provider value={[showSidebar, setShowsidebar,selectedCategory,setSelectedCategory]} >
             {children}
         </SidebarContext.Provider >
     )
