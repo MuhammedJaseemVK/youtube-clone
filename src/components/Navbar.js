@@ -1,32 +1,20 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { FaYoutube, FaMoon } from "react-icons/fa6";
 import { IoSearchOutline } from "react-icons/io5";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Link } from 'react-router-dom';
-import { useState } from "react";
+import Sidebar from './Sidebar';
+import { SidebarContext } from './context/SidebarContext';
 
 function Navbar() {
-    const [showSidebar, setShowsidebar] = useState(false);
+    const [showSidebar, setShowsidebar] = useContext(SidebarContext);
     return (
         <div className='w-full bg-slate-900 p-4 flex justify-between items-center text-white'>
             <div className='flex gap-3 items-center'>
                 <GiHamburgerMenu className='btn-menu' onClick={() => setShowsidebar(!showSidebar)} />
                 {
                     showSidebar &&
-                    <div className='absolute top-0 left-0 z-10 h-full w-1/6 bg-slate-700 shadow-xl'>
-                        <div className='flex flex-col gap-2 h-full p-4'>
-                            <div className='flex gap-3 items-center'>
-                                <GiHamburgerMenu className='btn-menu' onClick={() => setShowsidebar(!showSidebar)} />
-                                <Link to='/' className='flex gap-2 items-center'>
-                                    <FaYoutube size={30} className='text-[#FF0000]' />
-                                    <p className='font-bold'>YouTube</p>
-                                </Link>
-                            </div>
-                            <p className='btn'>Home</p>
-                            <p className='btn'>Trending</p>
-                            <p className='btn'>Music</p>
-                        </div>
-                    </div>
+                    <Sidebar />
                 }
                 <Link to='/' className='flex gap-2 items-center'>
                     <FaYoutube size={30} className='text-[#FF0000]' />
