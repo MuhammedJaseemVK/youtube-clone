@@ -8,7 +8,7 @@ function Feed() {
   const [, , selectedCategory, setSelectedCategory] = useContext(SidebarContext)
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetchFromAPI(`search/?q=${selectedCategory}}&type=video`)
+      const response = await fetchFromAPI(`search?part=snippet&q=${selectedCategory}`)
       setSearchResult(response.items)
     }
     fetchData();
@@ -21,7 +21,7 @@ function Feed() {
       <div className='grid grid-cols-4 gap-2' >
         {
           searchResult && searchResult.map((video, index, searchResult) => {
-            return <VideoCard key={index} video={video}/>
+            return <VideoCard key={index} video={video} />
           })
         }
       </div>

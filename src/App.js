@@ -10,7 +10,7 @@ import PageNotFound from './components/PageNotFound';
 
 function App() {
   return (
-    <div className='w-full h-screen bg-white'>
+    <div className='w-full h-full bg-green-500'>
       <BrowserRouter>
         <Navbar />
         <Routes>
