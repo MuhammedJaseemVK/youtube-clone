@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { fetchFromAPI } from './utils/fetchFromAPI'
 import { useParams } from 'react-router-dom'
-import Videos from './Videos';
+import SearchCard from './SearchCard';
 
 function SearchFeed() {
 
@@ -17,14 +17,12 @@ function SearchFeed() {
     fetchResult();
   }, [searchTerm])
   return (
-    <div className='w-full bg-violet-500 h-full flex flex-col justify-start items-center p-2'>
-      <div className='w-2/3'>
-        {
-          searchResult && searchResult.map((video, index, searchResult) => {
-            return <Videos video={video} key={index} />
-          })
-        }
-      </div>
+    <div className='w-full bg-violet-500 h-full flex flex-col p-2'>
+      {
+        searchResult && searchResult.map((video, index, searchResult) => {
+          return <SearchCard video={video} key={index} resolution='high' />
+        })
+      }
     </div>
   )
 }
