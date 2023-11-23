@@ -2,9 +2,15 @@ import React, { useContext } from 'react'
 import { FaYoutube } from "react-icons/fa6";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { SidebarContext } from './context/SidebarContext';
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 function Sidebar() {
+
+    const handleClick =(e)=>{
+        setSelectedCategory(e.target.value);
+        setShowsidebar(!showSidebar)
+    }
+
     const [showSidebar, setShowsidebar,selectedCategory,setSelectedCategory] = useContext(SidebarContext);
     return (
         <div className='absolute top-0 left-0 z-10 w-full h-full flex justify-between'>
@@ -17,9 +23,13 @@ function Sidebar() {
                             <p className='font-bold'>YouTube</p>
                         </Link>
                     </div>
-                    <p className='btn' onClick={()=>setSelectedCategory('Home')}>Home</p>
-                    <p className='btn' onClick={()=>setSelectedCategory('Trending')}>Trending</p>
-                    <p className='btn' onClick={()=>setSelectedCategory('Music')}>Music</p>
+                    <button className='btn' onClick={handleClick} value="Home" >Home</button>
+                    <button className='btn' onClick={handleClick} value="Trending" >Trending</button>
+                    <button className='btn' onClick={handleClick} value="Music" >Music</button>
+                    <button className='btn' onClick={handleClick} value="Movies" >Movies</button>
+                    <button className='btn' onClick={handleClick} value="Animated" >Animated</button>
+                    <button className='btn' onClick={handleClick} value="India">India</button>
+                    <button className='btn' onClick={handleClick} value="Hollywood">Hollywood</button>
                 </div>
             </div>
             <div className='bg-black/80 w-5/6 h-full' onClick={() => setShowsidebar(!showSidebar)}>

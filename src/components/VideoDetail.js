@@ -9,12 +9,12 @@ function VideoDetail() {
       <div className='bg-pink-500 w-2/3 h-2/3'>
         <div className='w-full bg-red-500 h-full'>
           <video className='w-full h-full'controls>
-            <source src="movie.mp4" type="video/mp4" />
+            <source src={`https://youtu.be/${videoId}`} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
         <div className='bg-white'>
-          <p>Video Title</p>
+          <p>{vide}</p>
           <p>Channel name</p>
         </div>
       </div>
