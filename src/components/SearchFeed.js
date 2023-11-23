@@ -10,7 +10,7 @@ function SearchFeed() {
 
   useEffect(() => {
     const fetchResult = async () => {
-      const response = await fetchFromAPI(`search?part=snippet,idt&q=${searchTerm}}`);
+      const response = await fetchFromAPI(`search?part=snippet,id&q=${searchTerm}`);
       console.log(response.items)
       setSearchResult(response.items);
     }
