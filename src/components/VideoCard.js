@@ -5,7 +5,7 @@ import { demoThumbnailUrl, demoVideoUrl, demoVideoTitle, demoChannelUrl, demoCha
 function VideoCard({ video }) {
   return (
     <Link to={`/VideoDetail/${video?.id?.videoId}`}>
-      <div className='rounded-md bg-[#1E1E1E] overflow-hidden'>
+      <div className='rounded-md bg-[#0f0f0f] overflow-hidden active:bg-[#272727]'>
         <img src={video?.snippet?.thumbnails?.high?.url.includes('_live.jpg')?demoThumbnailUrl:video?.snippet?.thumbnails?.high?.url} alt={video?.snippet?.title} className='object-cover h-[208px] w-full' />
         <div className='p-2 text-white h-[100px]'>
           <p className='text-base'>{video?.snippet?.thumbnails?.high?.url.includes('_live.jpg')?demoVideoTitle:video?.snippet?.title}</p>

@@ -5,7 +5,7 @@ import { demoThumbnailUrl, demoVideoUrl, demoVideoTitle, demoChannelUrl, demoCha
 function Videos({video}) {
   return (
     <Link to={`/VideoDetail/${video?.id?.videoId}`}>
-      <div className='bg-[#1E1E1E] flex overflow-hidden'>
+      <div className='bg-[#1E1E1E] flex rounded-md overflow-hidden'>
         <img src={video?.snippet?.thumbnails?.medium?.url || demoThumbnailUrl} className='w-[270px] h-[120px] ' alt={video?.snippet?.title} />
         <div className='p-2 text-white h-fit w-full' >
           <p className='text-xl'>{video?.snippet?.title.slice(0,40)+'...'}</p>

@@ -28,12 +28,12 @@ function VideoDetail() {
 
   }, [id])
   return (
-    <div className='bg-yellow-500 w-full flex h-full p-2'>
-      <div className='bg-violet-500 flex flex-col w-2/3 p-2'>
-        <div className='bg-pink-500 w-full h-[70vh]'>
+    <div className='bg-[#0f0f0f] w-full flex h-full p-2'>
+      <div className=' flex flex-col w-2/3 px-2 gap-4'>
+        <div className='w-full h-[70vh] rounded-3xl overflow-hidden'>
           <ReactPlayer url={`https://www.youtube.com/watch?v=${id}`} controls height='100%' width='100%' />
         </div>
-        <div className='bg-gray-500 text-white p-2 gap-2'>
+        <div className=' text-white p-2 gap-2'>
           <p className='text-4xl font-bold'>{video?.snippet?.title}</p>
           <div className='flex gap-4 text-lg'>
             <p>{parseInt(video?.statistics?.viewCount).toLocaleString()} Views</p>
@@ -50,7 +50,7 @@ function VideoDetail() {
           </Link>
           {
             video?.snippet?.description && (
-              <p className='text-base rounded-md bg-gray-700 p-2' onClick={() => setToggleDescription(!toggleDescription)}>{
+              <p className='text-md rounded-md bg-[#272727] p-2' onClick={() => setToggleDescription(!toggleDescription)}>{
                 toggleDescription ? (video?.snippet?.description) :
                   (video?.snippet?.description.slice(0, 100) + '...')}
               </p>

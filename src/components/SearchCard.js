@@ -5,7 +5,7 @@ import { demoThumbnailUrl, demoVideoUrl, demoVideoTitle, demoChannelUrl, demoCha
 function SearchCard({ video }) {
   return (
     <Link to={`/VideoDetail/${video?.id?.videoId}`}>
-      <div className='bg-[#1E1E1E] flex w-full overflow-hidden'>
+      <div className='bg-[#0f0f0f] flex w-full overflow-hidden active:bg-[#272727]'>
         <div >
           <img src={video?.snippet?.thumbnails?.medium?.url || demoThumbnailUrl }  alt={video?.snippet?.title} />
         </div>

@@ -14,9 +14,9 @@ function Feed() {
     fetchData();
   }, [selectedCategory])
   return (
-    <div className='w-full bg-slate-800 h-full p-2'>
+    <div className='w-full bg-[#0f0f0f] h-full p-2'>
       <div className='font-bold text-4xl text-[#FF0000] p-2'>
-        {selectedCategory} <span className='text-white'>Videos</span>
+        {selectedCategory} <span className='text-white'>videos</span>
       </div>
       <div className='grid grid-cols-4 gap-2' >
         {
