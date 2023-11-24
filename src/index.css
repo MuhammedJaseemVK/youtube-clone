@@ -3,11 +3,11 @@
 
 @layer components {
   .btn {
-    @apply  inline-block cursor-pointer text-left py-1 px-2 rounded-md font-bold hover:bg-slate-600;
+    @apply  inline-block cursor-pointer text-left py-1 px-2 rounded-md hover:bg-[#272727];
   }
 
   .btn-menu {
-    @apply inline-block cursor-pointer text-3xl p-2 rounded-full hover:bg-slate-600;
+    @apply inline-block cursor-pointer text-3xl p-2 rounded-full hover:bg-[#272727];
   }
 
 }
