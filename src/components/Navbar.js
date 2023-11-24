@@ -9,7 +9,7 @@ import Searchbar from './Searchbar';
 function Navbar() {
     const [showSidebar, setShowsidebar] = useContext(SidebarContext);
     return (
-        <div className='w-full bg-slate-900 p-4 flex justify-between items-center text-white'>
+        <div className='fixed top-0 w-full bg-slate-900 p-4 flex justify-between items-center text-white'>
             <div className='flex gap-3 items-center'>
                 <GiHamburgerMenu className='btn-menu' onClick={() => setShowsidebar(!showSidebar)} />
                 {

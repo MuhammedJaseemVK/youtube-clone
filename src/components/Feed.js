@@ -15,7 +15,7 @@ function Feed() {
   }, [selectedCategory])
   return (
     <div className='w-full bg-slate-800 h-full p-2'>
-      <div className='font-bold text-4xl text-[#FF0000]'>
+      <div className='font-bold text-4xl text-[#FF0000] p-2'>
         {selectedCategory} <span className='text-white'>Videos</span>
       </div>
       <div className='grid grid-cols-4 gap-2' >

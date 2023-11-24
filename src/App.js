@@ -10,9 +10,10 @@ import PageNotFound from './components/PageNotFound';
 
 function App() {
   return (
-    <div className='w-full h-full bg-green-500'>
+    <div className='w-full h-screen bg-[#0f0f0f]'>
       <BrowserRouter>
         <Navbar />
+        <div className='mt-[56px]'>
         <Routes>
           <Route path='/' exact element={<Feed />} />
           <Route path='/videoDetail/:id' element={<VideoDetail />} />
@@ -20,6 +21,7 @@ function App() {
           <Route path='/SearchFeed/:searchTerm' element={<SearchFeed />} />
           <Route path='*' element={<PageNotFound/>} />
         </Routes>
+        </div>
       </BrowserRouter>
     </div>
   )

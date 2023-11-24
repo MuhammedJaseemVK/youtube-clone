@@ -13,7 +13,7 @@ function Sidebar() {
 
     const [showSidebar, setShowsidebar,selectedCategory,setSelectedCategory] = useContext(SidebarContext);
     return (
-        <div className='absolute top-0 left-0 z-10 w-full h-full flex justify-between'>
+        <div className='fixed top-0 left-0 z-10 w-full h-full flex justify-between'>
             <div className='h-full w-1/6 bg-slate-700 shadow-xl'>
                 <div className='flex flex-col gap-2 h-full p-4'>
                     <div className='flex gap-3 items-center'>
