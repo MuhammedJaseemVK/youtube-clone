@@ -18,7 +18,7 @@ function Sidebar() {
         <div className='fixed top-0 left-0 z-10 w-full h-full flex justify-between'>
             <div className='h-full w-fit  bg-[#0f0f0f] shadow-xl'>
                 <div className='flex flex-col gap-2 h-full p-4'>
-                    <div className='flex gap-3 items-center'>
+                    <div className='flex gap-2 items-center'>
                         <GiHamburgerMenu className='btn-menu' onClick={() => setShowsidebar(!showSidebar)} />
                         <Link to='/' className='flex gap-2 items-center'>
                             <FaYoutube size={30} className='text-[#FF0000]' />
