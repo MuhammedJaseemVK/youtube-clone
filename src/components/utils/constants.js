@@ -28,9 +28,9 @@ export const categories = [
   { name: 'Crypto', icon: <LuCircleDollarSign />, },
 ];
 
-export const demoThumbnailUrl = 'https://i.ibb.co/G2L2Gwp/API-Course.png';
-export const demoChannelUrl = '/channel/UCmXmlB4-HJytD7wek0Uo97A';
-export const demoVideoUrl = '/video/GDa8kZLNhJ4';
-export const demoChannelTitle = 'JavaScript Mastery';
-export const demoVideoTitle = 'Build and Deploy 5 JavaScript & React API Projects in 10 Hours - Full Course | RapidAPI';
-export const demoProfilePicture = 'http://dergipark.org.tr/assets/app/images/buddy_sample.png'
+export const demoThumbnailUrl = 'https://i.ytimg.com/vi/miuIo_Q8VGA/hqdefault.jpg';
+export const demoChannelUrl = '/channel/UCV0UeQF0TZXjqwzDh32hNXA';
+export const demoVideoUrl = '/videoDetail/miuIo_Q8VGA';
+export const demoChannelTitle = 'MJ Hacks';
+export const demoVideoTitle = 'how to fix vlc media player not opening in ubuntu linux | how to fix vlc media player not working';
+export const demoProfilePicture = 'http://dhttps://i.ytimg.com/vi/miuIo_Q8VGA/hqdefault.jpgergipark.org.tr/assets/app/images/buddy_sample.png'

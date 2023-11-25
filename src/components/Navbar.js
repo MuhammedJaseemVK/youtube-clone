@@ -10,7 +10,7 @@ function Navbar() {
     const [showSidebar, setShowsidebar] = useContext(SidebarContext);
     return (
         <div className='fixed top-0 w-full bg-[#0f0f0f] p-4 flex justify-between items-center text-white'>
-            <div className='flex gap-3 items-center'>
+            <div className='flex gap-1 items-center'>
                 <GiHamburgerMenu className='btn-menu' onClick={() => setShowsidebar(!showSidebar)} />
                 {
                     showSidebar &&
@@ -18,11 +18,11 @@ function Navbar() {
                 }
                 <Link to='/' className='flex gap-2 items-center'>
                     <FaYoutube size={30} className='text-[#FF0000]' />
-                    <p className='font-bold'>YouTube</p>
+                    <p className='font-bold hidden sm:block'>YouTube</p>
                 </Link>
             </div>
-            <Searchbar />
-            <FaMoon size={20} />
+            <Searchbar className=' w-full'/>
+            <FaMoon size={20} className='hidden sm:block w-fit' />
         </div>
     )
 }

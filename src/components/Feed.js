@@ -15,16 +15,16 @@ function Feed() {
   }, [selectedCategory])
   return (
     <div className='w-full bg-[#0f0f0f] h-full p-2'>
-      <div className='font-bold text-4xl text-[#FF0000] p-2'>
+      <div className='font-bold text-2xl sm:text-4xl text-[#FF0000] p-2'>
         {selectedCategory} <span className='text-white'>videos</span>
       </div>
-      <div className='grid grid-cols-4 gap-2' >
-        {
-          searchResult && searchResult.map((video, index, searchResult) => {
-            return <VideoCard key={index} video={video} />
-          })
-        }
-      </div>
+        <div className='grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-4' >
+          {
+            searchResult && searchResult.map((video, index, searchResult) => {
+              return <VideoCard key={index} video={video} />
+            })
+          }
+        </div>
     </div>
   )
 }
