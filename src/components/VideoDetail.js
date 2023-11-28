@@ -82,7 +82,7 @@ function VideoDetail() {
       <div className='flex flex-col sm:w-1/3 gap-2 overflow-y-scroll h-screen'>
         {
           relatedVideos && relatedVideos.map((video, index, relatedVideos) => {
-            return <Videos key={index} video={video} resolution='medium' />
+            return <Videos key={index} video={video} />
           })
         }
       </div>
