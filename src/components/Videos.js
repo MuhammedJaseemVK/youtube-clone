@@ -1,15 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { decodeString } from './utils/decode';
 import { demoThumbnailUrl, demoVideoUrl, demoVideoTitle, demoChannelUrl, demoChannelTitle } from "./utils/constants";
 
 function Videos({video}) {
+  const videoTitle =video?.snippet?.thumbnails?.high?.url.includes('_live.jpg') ? demoVideoTitle : video?.snippet?.title
   return (
-    <Link to={`/VideoDetail/${video?.id?.videoId}`}>
-      <div className='bg-[#1E1E1E] flex rounded-md overflow-hidden'>
-        <img src={video?.snippet?.thumbnails?.medium?.url || demoThumbnailUrl} className='w-[270px] h-[120px] ' alt={video?.snippet?.title} />
-        <div className='p-2 text-white h-fit w-full' >
-          <p className='text-xl'>{video?.snippet?.title.slice(0,40)+'...'}</p>
-          <p className='text-lg text-gray-500'>{video?.snippet?.channelTitle.slice(0,20)+'...'}</p>
+    <Link to={video?.snippet?.thumbnails?.high?.url.includes('_live.jpg')?`${demoVideoUrl}`:`/VideoDetail/${video?.id?.videoId}`}>
+      <div className='bg-[#1E1E1E] flex flex-col xl:flex-row rounded-md overflow-hidden'>
+        <img src={video?.snippet?.thumbnails?.high?.url.includes('_live.jpg')?demoThumbnailUrl:video?.snippet?.thumbnails?.high?.url} className='w-full h-full ' alt={video?.snippet?.title} />
+        <div className='p-2 text-white h-min-[200px] h-full w-full' >
+          <p className='sm:text-md text-lg'>{decodeString(videoTitle)}</p>
+          <p className='sm:text-sm text-md text-gray-500'>{video?.snippet?.thumbnails?.high?.url.includes('_live.jpg') ? demoChannelTitle : video?.snippet?.channelTitle}</p>
         </div>
       </div>
     </Link>
