@@ -25,7 +25,7 @@ function SearchFeed() {
     <div className='w-full h-full flex flex-col p-2 gap-2 bg-[#0f0f0f] mt-14'>
       {
         searchResult && searchResult.map((video, index, searchResult) => {
-          return <SearchCard video={video} key={index} resolution='high' />
+          return <SearchCard video={video} key={video?.id?.videoId} resolution='high' />
         })
       }
     </div>

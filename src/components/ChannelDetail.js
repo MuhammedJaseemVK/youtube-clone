@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchFromAPI } from './utils/fetchFromAPI';
 import VideoCard from './VideoCard';
-import { decodeString } from './utils/decode';
 
 function ChannelDetail() {
   const { id } = useParams();
@@ -77,7 +76,7 @@ function ChannelDetail() {
       <div className='grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-4'>
         {
           videoData && videoData.map((video, index, videoData) => {
-            return <VideoCard key={index} video={video} />
+            return <VideoCard key={video?.id?.videoId} video={video} />
           })
         }
       </div>

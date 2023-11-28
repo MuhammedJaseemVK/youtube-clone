@@ -26,7 +26,7 @@ function Feed() {
         <div className='grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-4' >
           {
             searchResult && searchResult.map((video, index, searchResult) => {
-              return <VideoCard key={index} video={video} />
+              return <VideoCard key={video?.id?.videoId} video={video} />
             })
           }
         </div>
