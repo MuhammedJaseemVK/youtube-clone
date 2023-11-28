@@ -63,7 +63,7 @@ function VideoDetail() {
   return (
     <div className='bg-[#0f0f0f] w-full flex flex-col sm:flex-row h-full p-2'>
       <div className=' flex flex-col sm:w-2/3 px-2 gap-4'>
-        <div className='w-full sm:h-[70vh] h-[30vh] rounded-3xl overflow-hidden mt-3'>
+        <div className='aspect-video rounded-3xl overflow-hidden mt-3'>
           <ReactPlayer url={`https://www.youtube.com/watch?v=${id}`} controls height='100%' width='100%' />
         </div>
         <div className=' text-white p-2 gap-2'>
