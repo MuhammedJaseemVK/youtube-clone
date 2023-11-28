@@ -22,7 +22,7 @@ function Searchbar() {
     return (
         <div>
             <form onSubmit={handleSearch} className='flex justify-between items-center rounded-xl '>
-                <input type="text" id="searchBox" className='rounded-l-xl px-2 bg-transparent border w-full' placeholder='Search' value={searchTerm} onChange={handleChange} />
+                <input type="text" id="searchBox" name="searchBox" className='rounded-l-xl px-2 bg-transparent border w-full' placeholder='Search' value={searchTerm} onChange={handleChange} />
                 <button type='Submit'>
                     <IoSearchOutline size={30} className='bg-slate-800 w-fit border rounded-r-xl text-white px-2 py-1' />
                 </button>

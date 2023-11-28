@@ -10,8 +10,8 @@ function VideoCard({ video }) {
       className="flex flex-col gap-2 h-full"
     >
       <img
-        src={video?.snippet?.thumbnails?.high?.url.includes('_live.jpg')?demoThumbnailUrl:video?.snippet?.thumbnails?.high?.url}
-        className={''}
+        src={video?.snippet?.thumbnails?.high?.url.includes('_live.jpg')?demoThumbnailUrl:video?.snippet?.thumbnails?.high?.url  || video?.snippet?.thumbnails?.default?.url}
+        className={'h-[49%] object-cover'}
       />
       <div className="flex flex-col gap-2 text-white h-[110px]">
         <p className='text-base'>{decodeString(videoTitle)}</p>
