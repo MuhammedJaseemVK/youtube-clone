@@ -20,24 +20,40 @@ function VideoDetail() {
 
   useEffect(() => {
     const fetchVideoData = async () => {
-      const response = await fetchFromAPI(`videos?part=snippet,contentDetails,statistics&id=${id}`);
-      setVideo(response.items[0]);
-      setChannelId(response?.items[0]?.snippet?.channelId)
+      try {
+        const response = await fetchFromAPI(`videos?part=snippet,contentDetails,statistics&id=${id}`);
+        setVideo(response.items[0]);
+        setChannelId(response?.items[0]?.snippet?.channelId)
+      }
+      catch (error) {
+        console.error(error);
+      }
     }
     fetchVideoData();
 
     const fetchRelatedVideos = async () => {
-      const response = await fetchFromAPI(`search?part=snippet&relatedToVideoId=${id}&type=video`);
-      console.log(response.items)
-      setRelatedVideos(response.items);
+      try {
+        const response = await fetchFromAPI(`search?part=snippet&relatedToVideoId=${id}&type=video`);
+        console.log(response.items)
+        setRelatedVideos(response.items);
+      }
+      catch (error) {
+        console.error(error);
+      }
     }
     fetchRelatedVideos();
   }, [id])
+
   useEffect(() => {
     const fetchChannelDetails = async () => {
-      const Channelresponse = await fetchFromAPI(`channels?part=snippet&id=${channelId}`);
-      setChannelData(Channelresponse.items[0])
-      console.log(Channelresponse.items[0])
+      try {
+        const Channelresponse = await fetchFromAPI(`channels?part=snippet&id=${channelId}`);
+        setChannelData(Channelresponse.items[0])
+        console.log(Channelresponse.items[0])
+      }
+      catch (error) {
+        console.error(error);
+      }
     }
     if (channelId) {
       fetchChannelDetails();
@@ -52,11 +68,14 @@ function VideoDetail() {
         </div>
         <div className=' text-white p-2 gap-2'>
           <p className='text-xl sm:text-4xl font-bold'>{video?.snippet?.title}</p>
-          <div className='flex gap-4 text-lg'>
-            <p>{parseInt(video?.statistics?.viewCount).toLocaleString()} Views</p>
-            <p>{parseInt(video?.statistics?.likeCount).toLocaleString()} Likes</p>
-            <p>{parseInt(video?.statistics?.commentCount).toLocaleString()} Comments</p>
-          </div>
+          {
+            video &&
+            <div className='flex gap-4 text-lg'>
+              <p>{parseInt(video?.statistics?.viewCount).toLocaleString()} Views</p>
+              <p>{parseInt(video?.statistics?.likeCount).toLocaleString()} Likes</p>
+              <p>{parseInt(video?.statistics?.commentCount).toLocaleString()} Comments</p>
+            </div>
+          }
           <Link to={`/ChannelDetail/${video?.snippet?.channelId}`} className='flex items-center'>
             <div className='rounded-full w-12 h-12 m-2 flex justify-center items-center font-bold overflow-hidden'>
               {

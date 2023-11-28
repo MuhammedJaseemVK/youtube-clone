@@ -8,8 +8,13 @@ function Feed() {
   const [, , selectedCategory, setSelectedCategory] = useContext(SidebarContext)
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetchFromAPI(`search?part=snippet&q=${selectedCategory}`)
-      setSearchResult(response.items)
+      try{
+        const response = await fetchFromAPI(`search?part=snippet&q=${selectedCategory}`)
+        setSearchResult(response.items)
+      }
+      catch(error){
+        console.error(error);
+      }
     }
     fetchData();
   }, [selectedCategory])

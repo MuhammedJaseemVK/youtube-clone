@@ -13,16 +13,26 @@ function ChannelDetail() {
   useEffect(() => {
 
     const fetchChannelData = async () => {
-      const response = await fetchFromAPI(`channels?part=snippet&id=${id}`);
-      setChannelData(response.items[0])
-      console.log(response.items[0])
+      try{
+        const response = await fetchFromAPI(`channels?part=snippet&id=${id}`);
+        setChannelData(response.items[0]);
+        console.log(response.items[0]);
+      }
+      catch(error){
+        console.error(error);
+      }
     }
     fetchChannelData();
 
     const fetchVideoData =async()=>{
-      const response= await fetchFromAPI(`search?part=snippet,id&channelId=${id}`);
-      setVideoData(response.items)
-      console.log(response.items)
+      try{
+        const response= await fetchFromAPI(`search?part=snippet,id&channelId=${id}`);
+        setVideoData(response.items)
+        console.log(response.items)
+      }
+      catch(error){
+        console.error(error);
+      }
     }
     fetchVideoData();
 
