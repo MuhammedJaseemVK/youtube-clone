@@ -98,7 +98,7 @@ function VideoDetail() {
 
         </div>
       </div>
-      <div className='flex flex-col sm:w-1/3 gap-2 overflow-y-scroll h-screen'>
+      <div className='flex flex-col sm:w-1/3 gap-2 overflow-y-scroll h-screen mt-[12px]'>
         {
           relatedVideos && relatedVideos.map((video, index, relatedVideos) => {
             return <Videos key={video?.id?.videoId} video={video} />
