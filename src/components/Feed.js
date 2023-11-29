@@ -5,7 +5,7 @@ import VideoCard from './VideoCard';
 
 function Feed() {
   const [searchResult, setSearchResult] = useState(null);
-  const [, , selectedCategory, setSelectedCategory] = useContext(SidebarContext)
+  const [selectedCategory, setSelectedCategory] = useContext(SidebarContext)
   useEffect(() => {
     const fetchData = async () => {
       try{
