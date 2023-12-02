@@ -23,7 +23,7 @@ function VideoDetail() {
       try {
         const response = await fetchFromAPI(`videos?part=snippet,contentDetails,statistics&id=${id}`);
         setVideo(response.items[0]);
-        setChannelId(response?.items[0]?.snippet?.channelId)
+        setChannelId(response?.items[0]?.snippet?.channelId);
       }
       catch (error) {
         console.error(error);
@@ -48,8 +48,8 @@ function VideoDetail() {
     const fetchChannelDetails = async () => {
       try {
         const Channelresponse = await fetchFromAPI(`channels?part=snippet&id=${channelId}`);
-        setChannelData(Channelresponse.items[0])
-        console.log(Channelresponse.items[0])
+        setChannelData(Channelresponse.items[0]);
+        console.log(Channelresponse.items[0]);
       }
       catch (error) {
         console.error(error);
