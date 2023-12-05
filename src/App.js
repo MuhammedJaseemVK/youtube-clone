@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import SearchFeed from './components/SearchFeed';
 import VideoDetail from './components/VideoDetail';
 import PageNotFound from './components/PageNotFound';
+import Playlist from './components/Playlist';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path='/videoDetail/:id' element={<VideoDetail />} />
           <Route path='/ChannelDetail/:id' element={<ChannelDetail />} />
           <Route path='/SearchFeed/:searchTerm' element={<SearchFeed />} />
+          <Route path='/Playlist/:id' element={<Playlist />} />
           <Route path='*' element={<PageNotFound/>} />
         </Routes>
         </div>

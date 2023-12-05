@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { demoThumbnailUrl, demoVideoUrl, demoVideoTitle, demoChannelUrl, demoChannelTitle } from "./utils/constants";
+import { decodeString } from './utils/decode';
 
 function SearchCard({ video }) {
-  const videoTitle = video?.snippet?.thumbnails?.high?.url.includes('_live.jpg') ? demoVideoTitle : video?.snippet?.title;
+  const videoTitle = video?.snippet?.thumbnails?.high?.url.includes('_live.jpg') ? decodeString(demoVideoTitle) : decodeString(video?.snippet?.title);
   switch (video?.id?.kind) {
     case "youtube#video":
       {
@@ -37,7 +38,7 @@ function SearchCard({ video }) {
       }
     case "youtube#playlist":
       {
-        return (<Link to={`/VideoDetail/${video?.id?.videoId}`} className='w-full'>
+        return (<Link to={`/Playlist/${video?.id?.playlistId}`} className='w-full'>
           <div className='bg-[#0f0f0f] flex flex-col md:flex-row w-full overflow-hidden active:bg-[#272727] rounded-md'>
             <div >
               <img src={video?.snippet?.thumbnails?.medium?.url || demoThumbnailUrl} className='w-full md:w-fit' alt={video?.snippet?.title} />
