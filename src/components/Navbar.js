@@ -21,7 +21,6 @@ function Navbar() {
                 </Link>
             </div>
             <Searchbar className=' w-full'/>
-            <FaMoon size={20} className='hidden sm:block w-fit' />
         </div>
     )
 }

@@ -35,11 +35,6 @@ function Sidebar({showSidebar,setShowSidebar}) {
                                 </button>
                             ))
                         }
-                        
-                        <button className='btn w-full flex items-center gap-2 text-lg sm:hidden ' >
-                            <span><FaMoon size={20} className=' text-white' /></span>
-                            Light Mode
-                        </button>
                     </div>
                 </div>
             </div>

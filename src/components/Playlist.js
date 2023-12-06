@@ -103,7 +103,7 @@ function Playlist() {
                     </Link>
                     {
                         videoData?.snippet?.description && (
-                            <p className='text-md rounded-md bg-[#272727] p-2' onClick={() => setToggleDescription(!toggleDescription)}>
+                            <p className='text-md rounded-md bg-[#272727] p-2 whitespace-pre-wrap' onClick={() => setToggleDescription(!toggleDescription)}>
                                 {
                                     decodeString(channelDescription)
                                 }
